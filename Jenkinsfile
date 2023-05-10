@@ -15,7 +15,7 @@ pipeline{
         steps{
             sh '''
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 732275424814.dkr.ecr.us-east-1.amazonaws.com
-            cd app
+            cd Assignment
             docker build -t ameya -f Dockerfile.txt .
 			docker tag ameya:latest 732275424814.dkr.ecr.us-east-1.amazonaws.com/ameya:latest
             docker push 732275424814.dkr.ecr.us-east-1.amazonaws.com/ameya:latest
